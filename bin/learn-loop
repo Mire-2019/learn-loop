@@ -1,0 +1,12 @@
+#!/bin/sh
+# learn-loop 单入口：无需安装，直接把仓库根加进 PYTHONPATH 跑模块。
+# 用法： bin/learn-loop run tests/demo.mp4 tests/demo.srt --mock --out /tmp/ll-demo
+set -eu
+HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+ROOT=$(CDPATH= cd -- "$HERE/.." && pwd)
+PY="${PYTHON:-python3}"
+if ! command -v "$PY" >/dev/null 2>&1; then
+  echo "learn-loop: 找不到 python3（可用 PYTHON=... 指定解释器）" >&2
+  exit 127
+fi
+PYTHONPATH="$ROOT${PYTHONPATH:+:$PYTHONPATH}" exec "$PY" -m learn_loop "$@"

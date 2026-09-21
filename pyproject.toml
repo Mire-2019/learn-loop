@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "learn-loop"
+version = "0.1.0"
+description = "让 agent 学会一个领域的最小闭环：资料摄入 → 可核对笔记 → 跨条目综合考题 → 判据机检 → 判据写回技能"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "learn-loop contributors" }]
+keywords = ["agent", "learning", "verification", "ffmpeg", "citations"]
+dependencies = []          # 运行时零第三方依赖，只用标准库 + 外部 ffmpeg/ffprobe
+
+[project.scripts]
+learn-loop = "learn_loop.cli:main"
+
+[project.urls]
+Homepage = "https://example.invalid/learn-loop"
+
+[tool.setuptools]
+packages = ["learn_loop"]
