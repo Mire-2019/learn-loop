@@ -6,32 +6,6 @@
 
 ---
 
-## 新：模型引用审计（`learn_loop/cite_audit.py`）
-
-> 同一份材料给 20 个大模型，要求它们写出**能逐字核对的笔记**，再由机器去源文件里检索引用的那句话。
-
-```bash
-# 1) 看某一家的逐条判定（√ 逐字 / ≈ 省略 / ✗ 编造）
-python -m learn_loop.cite_audit --show data/audit-2026-09-22/round1-8k-budget.json --model deepseek-r1
-
-# 2) 看总表（20 个模型，同一份材料，同一套判据）
-python -m learn_loop.cite_audit --show data/audit-2026-09-22/round1-8k-budget.json --table
-
-# 3) 拿自己的材料跑一轮
-export OPENAI_BASE_URL=https://your-endpoint/v1 OPENAI_API_KEY=sk-...
-python -m learn_loop.cite_audit --source ./我的材料 --models "model-a,model-b" --out my.json
-
-# 4) 回看自己的结果
-python -m learn_loop.cite_audit --show my.json --table
-```
-
-本轮（2026-09-22）结果摘要：6 个模型 100% 有据（含 30B 小模型），`deepseek-r1` 十条里五条编造，
-`deepseek-v4-pro` 86%，两个最新旗舰在 8192 token 预算下**一条笔记都没交**。
-完整表格、局限说明与数据说明见 **[docs/citation-audit.md](docs/citation-audit.md)**，
-原始产物（含每个模型的原话与逐条判定）在 `data/audit-2026-09-22/`。
-
----
-
 ## 为什么要做这个（三个真实痛点）
 
 1. **模型看视频链接只拿到 3 帧。** 无论你说“仔细看这段视频”，模型通常只拿到平台给的三五张

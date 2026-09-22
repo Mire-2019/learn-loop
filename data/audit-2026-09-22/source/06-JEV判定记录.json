@@ -1,0 +1,42 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "q1_标题含真搜索词": {
+      "type": "noul",
+      "noul": 0.41
+    },
+    "q2_选题需求已被验证": {
+      "type": "noul",
+      "noul": 0.79
+    },
+    "q3_封面一眼看懂": {
+      "type": "noul",
+      "noul": 0.29
+    },
+    "q4_形态对得上头部": {
+      "type": "noul",
+      "noul": 0.05
+    },
+    "q5_交付物可验证": {
+      "type": "noul",
+      "noul": 0.54
+    },
+    "q6_发布时机在死区": {
+      "type": "noul",
+      "noul": 0.7
+    },
+    "q7_产出方自评作为验收": {
+      "type": "noul",
+      "noul": 0.24
+    },
+    "q8_闸门必须能否决发布": {
+      "type": "noul",
+      "noul": 0.85
+    }
+  },
+  "usage": {
+    "input_tokens": 806,
+    "output_tokens": 208
+  }
+}
+[jev] 8 问 / in 806 out 208 token / ≈$0.000034（$0.042/百万，output 免费）→ /opt/data/jev/ledger.jsonl

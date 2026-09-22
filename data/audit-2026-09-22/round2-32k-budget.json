@@ -1,0 +1,130 @@
+{
+ "at": "2026-09-22",
+ "source_chars": null,
+ "how": "让每个模型对同一份材料产出带原文引用的 JSON 笔记，再逐字核验引用",
+ "models": {
+  "glm-5.3": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "预算用尽，未产出笔记"
+  },
+  "deepseek-v4.1-flash": {
+   "n": 15,
+   "rate": 1.0,
+   "fake": 0,
+   "tally": {},
+   "secs": 111.2,
+   "usage": {
+    "prompt_tokens": 8247,
+    "total_tokens": 21347,
+    "completion_tokens": 13100
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261**，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 **163 个候选",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "里只记了 **21 个模型**：11 capped、9 exhausted、1 active",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "`exhausted` 之后再也不会被 `pick_and_reserve()` 选中",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "`limit` 会命中 `rate limit`（429 限流）",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**普通失败睡 3 小时**、明确欠费",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "改完重启容器：`candidates=163 of 261`，连续 152 次请求 0 失败",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "用户口径：**播放量是结果指标，能力才是标准**",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "破万是这三条的**产物**，不是打分口径。",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**结论：封面排第 2，不是低流量主因。**",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "主因排序：**① 需求入口（标题/关键词）② 形态（时长 + 无真实录屏）③ 开场钩子 ④ 封面。**",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "river.cao 2026-09-22 明确要求「你俩不要做重复，也不要做冲突」",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**2026-09-22 实测：手上三份 cookie 全失效**",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**正式投稿必须一次成型**：成片、封面、简介、标签、分区全部定稿后再传",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**笔记好看不等于学会；能被机器判对不对，才算学会。**",
+     "verdict": "可核对"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "抽帧时用 ffmpeg `drawtext` 把 **真实 PTS 烧进像素**",
+     "verdict": "可核对"
+    }
+   ],
+   "raw": "{\n  \"notes\": [\n    {\n      \"claim\": \"模型总数 261，轮换器按 EXCLUDE 过滤后剩 163 个候选。\",\n      \"cite\": \"01-轮换器修复记录.md\",\n      \"quote\": \"模型总数 261**，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 **163 个候选\"\n    },\n    {\n      \"claim\": \"账本里只记了 21 个模型：11 capped、9 exhausted、1 active。\",\n      \"cite\": \"01-轮换器修复记录.md\",\n      \"quote\": \"里只记了 **21 个模型**：11 capped、9 exhausted、1 active\"\n    },\n    {\n      \"claim\": \"exhausted 之后再也不会被 pick_and_reserve() 选中。\",\n      \"cite\": \"01-轮换器修复记录.md\",\n      \"quote\": \"`exhausted` 之后再也不会被 `pick_and_reserve()` 选中\"\n    },\n    {\n      \"claim\": \"limit 会命中 rate limit（429 限流）。\",\n      \"cite\": \"01-轮换器修复记录.md\",\n      \"quote\": \"`limit` 会命中 `rate limit`（429 限流）\"\n    },\n    {\n      \"claim\": \"普通失败睡 3 小时。\",\n      \"cite\": \"01-轮换器修复记录.md\",\n      \"quote\": \"**普通失败睡 3 小时**、明确欠费\"\n    },\n    {\n      \"claim\": \"改完重启容器后 candidates=163 of 261，连续 152 次请求 0 失败。\",\n      \"cite\": \"01-轮换器修复记录.md\",\n      \"quote\": \"改完重启容器：`candidates=163 of 261`，连续 152 次请求 0 失败\"\n    },\n    {\n      \"claim\": \"用户口径是播放量是结果指标，能力才是标准。\",\n      \"cite\": \"02-发布闸门.md\",\n      \"quote\": \"用户口径：**播放量是结果指标，能力才是标准**\"\n    },\n    {\n      \"claim\": \"破万是这三条的产物，不是打分口径。\",\n      \"cite\": \"02-发布闸门.md\",\n      \"quote\": \"破万是这三条的**产物**，不是打分口径。\"\n    },\n    {\n      \"claim\": \"结论：封面排第 2，不是低流量主因。\",\n      \"cite\": \"02-发布闸门.md\",\n      \"quote\": \"**结论：封面排第 2，不是低流量主因。**\"\n    },\n    {\n      \"claim\": \"主因排序：① 需求入口（标题/关键词）② 形态（时长 + 无真实录屏）③ 开场钩子 ④ 封面。\",\n      \"cite\": \"02-发布闸门.md\",\n      \"quote\": \"主因排序：**① 需求入口（标题/关键词）② 形态（时长 + 无真实录屏）③ 开场钩子 ④ 封面。**\"\n    },\n    {\n      \"claim\": \"river.cao 2026-09-22 明确要求「你俩不要做重复，也不要做冲突」。\",\n      \"cite\": \"03-两机分工.md\",\n      \"quote\": \"river.cao 2026-09-22 明确要求「你俩不要做重复，也不要做冲突」\"\n    },\n    {\n      \"claim\": \"2026-09-22 实测：手上三份 cookie 全失效。\",\n      \"cite\": \"04-投稿通道实测.md\",\n      \"quote\": \"**2026-09-22 实测：手上三份 cookie 全失效**\"\n    },\n    {\n      \"claim\": \"正式投稿必须一次成型：成片、封面、简介、标签、分区全部定稿后再传。\",\n      \"cite\": \"04-投稿通道实测.md\",\n      \"quote\": \"**正式投稿必须一次成型**：成片、封面、简介、标签、分区全部定稿后再传\"\n    },\n    {\n      \"claim\": \"笔记好看不等于学会；能被机器判对不对，才算学会。\",\n      \"cite\": \"05-learn-loop说明.md\",\n      \"quote\": \"**笔记好看不等于学会；能被机器判对不对，才算学会。**\"\n    },\n    {\n      \"claim\": \"抽帧时用 ffmpeg drawtext 把真实 PTS 烧进像素。\",\n      \"cite\": \"05-learn-loop说明.md\",\n      \"quote\": \"抽帧时用 ffmpeg `drawtext` 把 **真实 PTS 烧进像素**\"\n    }\n  ]\n}"
+  },
+  "kimi-k3": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  "qwen3-max": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "HTTP 403: {\"error\":{\"message\":\"Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the \\\"use free tier only\\\" mode in the management console.\",\"id\":\"44f0dfcf-aa16-"
+  }
+ }
+}

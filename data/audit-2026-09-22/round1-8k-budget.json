@@ -1,0 +1,994 @@
+{
+ "at": "2026-09-22",
+ "source_chars": null,
+ "how": "让每个模型对同一份材料产出带原文引用的 JSON 笔记，再逐字核验引用",
+ "models": {
+  "deepseek-v4.1-flash": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "预算用尽，未产出笔记"
+  },
+  "deepseek-v4-pro": {
+   "n": 14,
+   "rate": 0.857,
+   "fake": 2,
+   "tally": {
+    "逐字": 12,
+    "编造": 2
+   },
+   "secs": 100.0,
+   "usage": {
+    "prompt_tokens": 8221,
+    "total_tokens": 13422,
+    "completion_tokens": 5201
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 163 个候选",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本里只记了 21 个模型：11 capped、9 exhausted、1 active，累计 14.1M token",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "直连上游逐个试 100 个：55 通 / 39 报「模型名无效或不支持」/ 5 个 403 / 1 个 429",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "改完重启容器：candidates=163 of 261，连续 152 次请求 0 失败，OV 技能上传从 503 恢复成 200。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "结论：封面排第 2，不是低流量主因。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "主因排序：① 需求入口（标题/关键词）② 形态（时长 + 无真实录屏）③ 开场钩子 ④ 封面",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "“抽查 AI 的笔记”（自造词，搜索框里没人这么搜）",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "本机的 G1–G4 降级并合：G1→P0、G2→P0 标题公式＋P3 前 3 秒/封面数字钩子、G4→P3 片长与语速",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "2026-09-22 实测：手上三份 cookie 全失效",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "任何投稿任务的第一步永远是 GET /x/web-interface/nav 并报出 uname/mid",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "封面不是 multipart：multipart（含 wbi、`t`/`csrf` 任意组合）一律 `-400 请求错误`；必须 data URL 表单。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "`submit('web')` → `{\"code\":0,\"data\":{\"aid\":117312686462006,\"bvid\":\"BV1txhk65Eje\"}}`",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "把真实 PTS 烧进像素（text='%{pts\\:hms}'）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "[jev] 8 问 / in 806 out 208 token / ≈$0.000034",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "deepseek-v3.2": {
+   "n": 12,
+   "rate": 0.917,
+   "fake": 1,
+   "tally": {
+    "逐字": 11,
+    "编造": 1
+   },
+   "secs": 15.7,
+   "usage": {
+    "prompt_tokens": 8221,
+    "total_tokens": 9018,
+    "completion_tokens": 797
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 **163 个候选**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本里只记了 **21 个模型**：11 capped、9 exhausted、1 active",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "正则误伤：`limit` 会命中 `rate limit`（429 限流）和 `max_tokens 超出区间` 这类**临时/参数**错误",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "四道闸门（任意一道不过 → 不发，或只改一格再发）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型的原文理由：E 赢在「权威背书 + 热点 + 一句话就能解决的好奇」",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "主因排序：**① 需求入口（标题/关键词）**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "选题体检门、买点翻译、标题公式（P0） | B 站账号通道：扫码登录、网页投稿接口、稿件状态回读（只有本机持有 cookie 与出口）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "biliup **Python 包**的 `login_by_cookies` → `upload_file` → `cover_up` → `submit('web')` → **`{\"code\":0,\"data\":{\"aid\":1173",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "失效后只能重新扫码（状态码在内层 `data.code`，坑见 SKILL.md §1）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**让 agent 学会一个领域的最小闭环**：资料摄入 → 可核对笔记 → 跨条目综合考题 → 判据机检 → 判据写回技能",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "字幕物理体检：句数/首末点/覆盖率/跳段/可疑",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "\"q8_闸门必须能否决发布\": {\"type\": \"noul\", \"noul\": 0.85}",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "qwen3-max": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "HTTP 403: {\"error\":{\"message\":\"Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the \\\"use free tier only\\\" mode in the management console.\",\"id\":\"41af1fa5-b40a-"
+  },
+  "qwen3-235b-a22b": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "HTTP 403: {\"error\":{\"message\":\"Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the \\\"use free tier only\\\" mode in the management console.\",\"id\":\"35aa6814-f488-"
+  },
+  "qwen3-coder-plus": {
+   "n": 8,
+   "rate": 1.0,
+   "fake": 0,
+   "tally": {
+    "逐字": 7,
+    "省略": 1
+   },
+   "secs": 8.5,
+   "usage": {
+    "prompt_tokens": 8921,
+    "total_tokens": 9721,
+    "completion_tokens": 800
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "上游聚合端点：`https://ws-8ipu42b1e3t5h3ow.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`（阿里云百炼 MaaS，挂了多家：qwen 226、MiniMax 8、",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 163 个候选",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本（`/home/ubuntu/rotator/ledger.json` → 容器内 `/data/ledger.json`）里只记了 21 个模型：11 capped、9 exhausted、1 active，累计 14.1M toke",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "直连上游逐个试 100 个：55 通 / 39 报「模型名无效或不支持」/ 5 个 403 / 1 个 429",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "`limit` 会命中 `rate limit`（429 限流）和 `max_tokens 超出区间` 这类临时/参数错误",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "用户口径：播放量是结果指标，能力才是标准",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "把能力定义成三条可外部验证的过程指标：闸门通过率、盲评排名、相对数据",
+     "verdict": "省略"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "G1 需求：目标观众会搜的词必须有量（`bili_search.py kw`）；同题 Top10 形态表（标题句式/封面/时长/分区/UP 量级）",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "qwen-plus-latest": {
+   "n": 12,
+   "rate": 1.0,
+   "fake": 0,
+   "tally": {
+    "逐字": 12
+   },
+   "secs": 29.3,
+   "usage": {
+    "prompt_tokens": 8921,
+    "total_tokens": 10205,
+    "completion_tokens": 1284
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "上游聚合端点：`https://ws-8ipu42b1e3t5h3ow.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`（阿里云百炼 MaaS，挂了多家：qwen 226、MiniMax 8、",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**模型总数 261**，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 **163 个候选**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本（`/home/ubuntu/rotator/ledger.json` → 容器内 `/data/ledger.json`）里只记了 **21 个模型**：11 capped、9 exhausted、1 active，累计 **14.1",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "直连上游逐个试 100 个：**55 通 / 39 报「模型名无效或不支持」/ 5 个 403 / 1 个 429** → 外推 163 个候选里约 80–90 个真能用",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "用户口径：**播放量是结果指标，能力才是标准**。但\"能力\"如果不能被测，就退化成自评——所以把能力定义成三条可外部验证的过程指标：",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "判据：**有人搜、但做得烂**。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "标题前 12 字含被搜的词；开场 5 秒有可视物 + 反常识断言。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "> **立件原因**：river.cao 2026-09-22 明确要求「你俩不要做重复，也不要做冲突」。本件是**唯一的分工权威**，",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**`{\"code\":0,\"data\":{\"aid\":117312686462006,\"bvid\":\"BV1txhk65Eje\"}}`**（分区 231，标题/封面/简介/标签全部落地）。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**让 agent 学会一个领域的最小闭环**：资料摄入 → 可核对笔记 → 跨条目综合考题 → 判据机检 → 判据写回技能。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "覆盖率 >105%（字幕比视频还长）或 <50%（大片空白）或存在跳段 ⇒ **判可疑并非零退出**，而不是继续拿它编笔记。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "{\n  \"model\": \"jev-1.13.0\",\n  \"answers\": {",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "kimi-k2.6": {
+   "n": 15,
+   "rate": 1.0,
+   "fake": 0,
+   "tally": {
+    "逐字": 15
+   },
+   "secs": 20.9,
+   "usage": {
+    "prompt_tokens": 7815,
+    "total_tokens": 8558,
+    "completion_tokens": 743
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "上游聚合端点：",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "直连上游逐个试 100 个：",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "9 个模型",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "连续 152 次请求 0 失败",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "四道闸门（任意一道不过 → 不发，或只改一格再发）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "主因排序：",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "归 **工作机**（源）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "biliup **Python 包**的",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "二维码 **170 秒**就过期",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "封面不是 multipart",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**运行时零第三方依赖**（只用标准库）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "mock 模式不会假装看懂画面",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "\"q8_闸门必须能否决发布\"",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "\"q4_形态对得上头部\"",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "kimi-k2-thinking": {
+   "n": 16,
+   "rate": 0.875,
+   "fake": 2,
+   "tally": {
+    "逐字": 13,
+    "编造": 2,
+    "省略": 1
+   },
+   "secs": 176.2,
+   "usage": {
+    "prompt_tokens": 7813,
+    "completion_tokens": 11122,
+    "total_tokens": 18935
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "上游聚合端点：`https://ws-8ipu42b1e3t5h3ow.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`（阿里云百炼 MaaS",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "- **模型总数 261**，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 **163 个候选**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本里只记了 **21 个模型**：11 capped、9 exhausted、1 active，累计 **14.1M token**",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "2. **正则误伤**：`limit` 会命中 `rate limit`（429 限流）和 `max_tokens 超出区间` 这类**临时/参数**错误",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "1. **判死 → 冷却**：`exhausted`/`cooldown` 都带 `retry_after`；**普通失败睡 3 小时**、明确欠费",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "## 四道闸门（任意一道不过 → 不发，或只改一格再发）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**结论：封面排第 2，不是低流量主因。**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "主因排序：**① 需求入口（标题/关键词）② 形态（时长 + 无真实录屏）③ 开场钩子 ④ 封面**。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "分工（按「哪台机器才做得到」切，不按喜好切）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "- `POST` 投稿：输入「成片 + 封面 + 标题/简介/标签/分区」→ 输出 `aid/bvid` + 审核状态",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "- **2026-09-22 实测：手上三份 cookie 全失效**（`nav` 回 `-101 账号未登录`",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "- 生产工具＝biliup 的 **Python 包**：`BiliBili` + `Data` + `login_by_cookies`",
+     "verdict": "省略"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "| R4 | 引用指向的文件真实存在；视频引用的时间戳落在时长范围内 |",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "一句话：**笔记好看不等于学会；能被机器判对不对，才算学会**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "\"q8_闸门必须能否决发布\": {\"type\": \"noul\",\"noul\": 0.85}",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "- Python ≥ 3.10，**运行时零第三方依赖**（只用标准库）",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "kimi-k3": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "TimeoutError: The read operation timed out"
+  },
+  "glm-5.3": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "预算用尽，未产出笔记"
+  },
+  "glm-5": {
+   "n": 8,
+   "rate": 1.0,
+   "fake": 0,
+   "tally": {
+    "逐字": 8
+   },
+   "secs": 45.5,
+   "usage": {
+    "prompt_tokens": 8285,
+    "total_tokens": 12501,
+    "completion_tokens": 4216
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 **163 个候选**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "OV 技能上传从 503 恢复成 **200**。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "E > B > D > C > A        B = 我们的封面",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "\"抽查 AI 的笔记\"（**自造词，搜索框里没人这么搜**）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "`bili-video-pipeline` 等 B 站技能的**源头在工作机**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "二维码 **170 秒**就过期 → 做成常驻进程自动换新码",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "Python ≥ 3.10，**运行时零第三方依赖**（只用标准库）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "\"model\": \"jev-1.13.0\",",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "ZHIPU/GLM-5.3-FlashX": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "HTTP 400: {\"code\":\"InvalidParameter\",\"message\":\"The product is not activated, please confirm that you have activated products and try again after activation.\",\"request_id\":\"a2a7cf33-6887-9dca-881e-66487b1b024a\""
+  },
+  "MiniMax/MiniMax-M2.7": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "HTTP 400: {\"error\":{\"message\":\"The product is not activated, please confirm that you have activated products and try again after activation.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_paramete"
+  },
+  "MiniMax/MiniMax-M3": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "HTTP 400: {\"error\":{\"message\":\"The product is not activated, please confirm that you have activated products and try again after activation.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_paramete"
+  },
+  "xiaomi/mimo-v2.5-pro": {
+   "n": 0,
+   "rate": null,
+   "fake": 0,
+   "note": "HTTP 400: {\"error\":{\"message\":\"The product is not activated, please confirm that you have activated products and try again after activation.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_paramete"
+  },
+  "qwen3-next-80b-a3b-instruct": {
+   "n": 12,
+   "rate": 1.0,
+   "fake": 0,
+   "tally": {
+    "逐字": 12
+   },
+   "secs": 4.9,
+   "usage": {
+    "prompt_tokens": 8921,
+    "total_tokens": 9981,
+    "completion_tokens": 1060
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 163 个候选",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本（`/home/ubuntu/rotator/ledger.json` → 容器内 `/data/ledger.json`）里只记了 21 个模型：11 capped、9 exhausted、1 active，累计 14.1M toke",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "直连上游逐个试 100 个：**55 通 / 39 报「模型名无效或不支持」/ 5 个 403 / 1 个 429**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "exhausted 之后再也不会被 `pick_and_reserve()` 选中。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "证据：9 个模型 `used = 0`（一次成功调用都没有）就被标成 `exhausted`。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "G1 需求：目标观众会搜的词必须有量（`bili_search.py kw`）；同题 Top10 形态表（标题句式/封面/时长/分区/UP 量级）。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "盲评排名 | 封面/标题与同题竞品混排，**盲评者不知道哪张是我们的** | 外部视觉模型 + 用户",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "稿件状态怎么查（投稿接口只回 aid/bvid，不给状态；公开接口在审核期回 `-404`，别据此以为失败）：",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "本项目的做法：抽帧时用 ffmpeg `drawtext` 把 **真实 PTS 烧进像素**（`text='%{pts\\:hms}'`）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "R6 | 每个字幕源都有覆盖率报告，且没被判可疑",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "\"q8_闸门必须能否决发布\": {\"type\": \"noul\", \"noul\": 0.85}",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "本机产出（成片、封面、投稿记录、数据快照）落本机 OV 资源域并**登记在本件**",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "qwen3-32b": {
+   "n": 8,
+   "rate": 0.875,
+   "fake": 1,
+   "tally": {
+    "逐字": 6,
+    "省略": 1,
+    "编造": 1
+   },
+   "secs": 24.0,
+   "usage": {
+    "prompt_tokens": 8921,
+    "total_tokens": 10174,
+    "completion_tokens": 1253
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 163 个候选",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本（`/home/ubuntu/rotator/ledger.json` → 容器内 `/data/ledger.json`）里只记了 21 个模型：11 capped、9 exhausted、1 active",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "外推 163 个候选里约 80–90 个真能用",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "一次失败就永久下架：`exhausted` 之后再也不会被 `pick_and_reserve()` 选中",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "G1 需求：目标观众会搜的词必须有量（`bili_search.py kw`）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "结论：封面排第 2，不是低流量主因",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "验活：`GET api.bilibili.com/x/web-interface/nav` | `code=0 isLogin=True`",
+     "verdict": "省略"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "外部命令：`ffmpeg` / `ffprobe`（视频抽帧与接触表必需）；`pdftotext`（可选，只有读 PDF 时才需要）",
+     "verdict": "编造"
+    }
+   ],
+   "raw": ""
+  },
+  "deepseek-r1": {
+   "n": 10,
+   "rate": 0.5,
+   "fake": 5,
+   "tally": {
+    "逐字": 5,
+    "编造": 5
+   },
+   "secs": 20.8,
+   "usage": {
+    "prompt_tokens": 8220,
+    "completion_tokens": 1155,
+    "total_tokens": 9375
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "一次失败就永久下架：exhausted 之后再也不会被 pick_and_reserve() 选中",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "普通失败睡 3 小时、明确欠费睡 24 小时，到点自动放回 active",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "四道闸门（任意一道不过 → 不发，或只改一格再发）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "blind_cover_test.py 把我们的封面与同题竞品混排盲评",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "本机若发现缺陷，出patch建议件...不直接覆盖",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "投稿任务的第一个动作是 nav → 报出 uname/mid，不要直接投入准备",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "每条结论都必须带可解析的引用（视频→时间戳+帧文件；文档→行号）",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "覆盖率报告缺失，一句跳段...一律退出码非零",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "q4_形态对得上头部\": {\"noul\": 0.05}",
+     "verdict": "编造"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "406 {\"code\":601,\"message\":\"您上传视频过快，请您稍作休息后再继续\"}",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  },
+  "qwen3-30b-a3b-instruct-2507": {
+   "n": 8,
+   "rate": 1.0,
+   "fake": 0,
+   "tally": {
+    "逐字": 8
+   },
+   "secs": 6.9,
+   "usage": {
+    "prompt_tokens": 8921,
+    "total_tokens": 9666,
+    "completion_tokens": 745
+   },
+   "notes": [
+    {
+     "file": "",
+     "point": "",
+     "quote": "模型总数 261，轮换器按 EXCLUDE 过滤掉音频/图像/TTS 后剩 163 个候选",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "账本（`/home/ubuntu/rotator/ledger.json` → 容器内 `/data/ledger.json`）里只记了 **21 个模型**：11 capped、9 exhausted、1 active，累计 **14.1",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "直连上游逐个试 100 个：**55 通 / 39 报「模型名无效或不支持」/ 5 个 403 / 1 个 429**",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "`exhausted` 之后再也不会被 `pick_and_reserve()` 选中。证据：9 个模型 `used = 0`（一次成功调用都没有）就被标成 `exhausted`。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "`limit` 会命中 `rate limit`（429 限流）和 `max_tokens 超出区间` 这类**临时/参数**错误。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "改完重启容器：`candidates=163 of 261`，连续 152 次请求 0 失败，OV 技能上传从 503 恢复成 **200**。",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "**结论：封面排第 2，不是低流量主因。**对照同题头部的形态差：",
+     "verdict": "逐字"
+    },
+    {
+     "file": "",
+     "point": "",
+     "quote": "下一条片子发布前，G1–G4 全部有**外部产出物**（搜索数据 / 盲评回答 / 交付物链接 / 形态对照表），缺一个不算跑过。",
+     "verdict": "逐字"
+    }
+   ],
+   "raw": ""
+  }
+ }
+}
